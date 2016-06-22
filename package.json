@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "2016/06/23・24 にチーム内で予定しているReactのハンズオンのために作ったもの。 今回、es6は使いません。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geechs-kshimabukuro/React-Hands-on.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geechs-kshimabukuro/React-Hands-on/issues"
+  },
+  "homepage": "https://github.com/geechs-kshimabukuro/React-Hands-on#readme",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1"
+  }
+}
