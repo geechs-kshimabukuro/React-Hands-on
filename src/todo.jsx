@@ -25,9 +25,21 @@ var TODOForm = React.createClass({
 
 var TODOList = React.createClass({
 	render: function() {
-
 		var createTask = function(todo) {
-			return <li key={todo.id}>{todo.task}</li>
+			if (todo.status == 0) {
+				return (
+					<li key={todo.id}>
+						<input type="checkbox"/>
+						{todo.task}
+					</li>
+				);
+			} else {
+				return (
+					<li kay={i}>
+						<s>{todo.task}</s>
+					</li>
+				);
+			}
 		}
 
 		return (
