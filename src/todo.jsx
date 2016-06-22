@@ -1,4 +1,16 @@
+
+
+var TODOApp = React.createClass({
+	render: function() {
+		return (
+			<div className="todoapp">
+				ここがtodoアプリになるよ。
+			</div>
+		);
+	}
+});
+
 ReactDOM.render(
-	<p>Hello, React!</p>,
+	<TODOApp />,
 	document.getElementById('app')
 );
