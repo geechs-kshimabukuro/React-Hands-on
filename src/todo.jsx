@@ -10,21 +10,30 @@ var TODOForm = React.createClass({
 
 var TODOList = React.createClass({
 	render: function() {
+
+		var createTask = function(todo) {
+			return <li key={todo.id}>{todo.task}</li>
+		}
+
 		return (
 			<div className="todolist">
-				ここがtaskリストの表示する場所だよ。
+				<ul>
+					{this.props.todos.map(createTask)}
+				</ul>
 			</div>
 		);
 	}
 });
 
 var TODOApp = React.createClass({
+	getInitialState: function() {
+		return { todos: [{id: Date.now(), task: 'hoge', status: 0}], text: ''}
+	},
 	render: function() {
 		return (
 			<div className="todoapp">
-				ここがtodoアプリになるよ。
 				<TODOForm />
-				<TODOList />
+				<TODOList todos={this.state.todos}/>
 			</div>
 		);
 	}
