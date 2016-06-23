@@ -179,4 +179,86 @@ check boxをクリックしたら打ち消し線が引かれている感じの�
 		:
 
 ![img](./img/img4.png)
+<<<<<<< HEAD
 >>>>>>> 150d0304a0d3836938c7ddf38427ebbdd131b3eb
+=======
+
+## Step4
+
+taskが表示されましたぁ。というわけでtaskを追加するためのformを表示します。
+
+		src/todo.jsx
+		var TODOForm = React.createClass({
+			render: function() {
+				return (
+					<div className="todoform">
+						<form onSubmit={this.handleSubmit}>
+							<input onChange={this.onChange} value={this.state.text}/>
+							<button>add</button>
+						</form>
+					</div>
+				);
+			}
+		});
+		:
+		:
+
+![img](./img/img5.png)
+
+- form で送信されたtaskが登録されるように値を渡します。
+
+		src/todotodo.jsx
+		var TODOForm = React.createClass({
+			getInitialState: function() {
+				return {text: ''};
+			},
+			onChange: function(e) {
+				this.setState({text: e.target.value});
+			},
+			handleSubmit: function(e) {
+				e.preventDefault();
+				var newTask = this.state.text;
+				this.props.onAdd(newTask);
+				this.setState({text: ''});
+			},
+			render: function() {
+				return (
+					<div className="todoform">
+						<form onSubmit={this.handleSubmit}>
+							<input onChange={this.onChange} value={this.state.text}/>
+							<button>add</button>
+						</form>
+					</div>
+				);
+			}
+		});
+
+		:
+		:
+
+		var TODOApp = React.createClass({
+			getInitialState: function() {
+				return { todos: [{id: Date.now(), task: 'hoge', status: 0}] }
+			},
+			onAdd: function(newTask) {
+				this.setState({
+					todos: this.state.todos.concat({id: Date.now(), task: newTask, status: 0})
+				});
+			},
+			render: function() {
+				return (
+					<div className="todoapp">
+						<TODOForm onAdd={this.onAdd}/>
+						<TODOList todos={this.state.todos}/>
+					</div>
+				);
+			}
+		});
+
+		:
+		:
+
+![img](./img/img6.png)
+
+完成!
+>>>>>>> 92e9e9ad81e24bb44c4e852ab79661c966c8d6cc

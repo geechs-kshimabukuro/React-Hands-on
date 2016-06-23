@@ -14,7 +14,10 @@ var TODOForm = React.createClass({
 	render: function() {
 		return (
 			<div className="todoform">
-				ここがフォームだお
+				<form onSubmit={this.handleSubmit}>
+					<input onChange={this.onChange} value={this.state.text}/>
+					<button>add</button>
+				</form>
 			</div>
 		);
 	}
