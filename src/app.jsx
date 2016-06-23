@@ -8,7 +8,7 @@ var TODOForm = React.createClass({
 	handleSubmit: function(e) {
 		e.preventDefault();
 		var newTask = this.state.text;
-		this.props.onAdd(newTask);
+		this.props.addTask(newTask);
 		this.setState({text: ''});
 	},
 	render: function() {
@@ -26,20 +26,12 @@ var TODOForm = React.createClass({
 var TODOList = React.createClass({
 	render: function() {
 		var createTask = function(todo) {
-			if (todo.status == 0) {
-				return (
-					<li key={todo.id}>
-						<input type="checkbox"/>
-						{todo.task}
-					</li>
-				);
-			} else {
-				return (
-					<li kay={i}>
-						<s>{todo.task}</s>
-					</li>
-				);
-			}
+			return (
+				<li key={todo.id}>
+					<input type="checkbox"/>
+					{todo.task}
+				</li>
+			);
 		}
 
 		return (
@@ -54,17 +46,17 @@ var TODOList = React.createClass({
 
 var TODOApp = React.createClass({
 	getInitialState: function() {
-		return { todos: [{id: Date.now(), task: 'hoge', status: 0}] }
+		return { todos: [{id: Date.now(), task: 'hoge'] }
 	},
-	onAdd: function(newTask) {
+	addTask: function(newTask) {
 		this.setState({
-			todos: this.state.todos.concat({id: Date.now(), task: newTask, status: 0})
+			todos: this.state.todos.concat({id: Date.now(), task: newTask})
 		});
 	},
 	render: function() {
 		return (
 			<div className="todoapp">
-				<TODOForm onAdd={this.onAdd}/>
+				<TODOForm addTask={this.addTask}/>
 				<TODOList todos={this.state.todos}/>
 			</div>
 		);
