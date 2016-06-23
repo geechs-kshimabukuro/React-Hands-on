@@ -14,10 +14,7 @@ var TODOForm = React.createClass({
 	render: function() {
 		return (
 			<div className="todoform">
-				<form onSubmit={this.handleSubmit}>
-					<input onChange={this.onChange} value={this.state.text}/>
-					<button>add</button>
-				</form>
+				ここがフォームだお
 			</div>
 		);
 	}
@@ -26,20 +23,12 @@ var TODOForm = React.createClass({
 var TODOList = React.createClass({
 	render: function() {
 		var createTask = function(todo) {
-			if (todo.status == 0) {
-				return (
-					<li key={todo.id}>
-						<input type="checkbox"/>
-						{todo.task}
-					</li>
-				);
-			} else {
-				return (
-					<li kay={i}>
-						<s>{todo.task}</s>
-					</li>
-				);
-			}
+			return (
+				<li key={todo.id}>
+					<input type="checkbox"/>
+					{todo.task}
+				</li>
+			);
 		}
 
 		return (
