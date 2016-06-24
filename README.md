@@ -16,6 +16,8 @@
 23日 07:00 現在、タスク完了の機能を実装まだできていないです。  
 check boxをクリックしたら打ち消し線が引かれている感じのやつをやりたい。(願望)
 
+24日 09:55 現在、下記の説明が不親切なので少し修正中。
+
 ## 準備
 
 - `$ git clone https://github.com/geechs-kshimabukuro/React-Hands-on.git`
@@ -176,9 +178,6 @@ check boxをクリックしたら打ち消し線が引かれている感じの�
 		:
 
 ![img](./img/img4.png)
-<<<<<<< HEAD
->>>>>>> 150d0304a0d3836938c7ddf38427ebbdd131b3eb
-=======
 
 ## Step4
 
